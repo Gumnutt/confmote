@@ -1,0 +1,307 @@
+*,
+*:after,
+*:before {
+  outline-color: red;
+  box-sizing: border-box;
+}
+
+:root {
+  --color: hsl(0 0% 10%);
+}
+html {
+  overflow-x: hidden;
+}
+
+html * {
+  color: var(--color);
+  accent-color: #ff0000;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  width: 100vw;
+  background: hsl(0 0% 98%);
+  font-family: sans-serif, system-ui;
+}
+
+:where(input, textarea, dialog) {
+  border-radius: 6px;
+}
+
+main {
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+  place-items: center;
+}
+
+dialog {
+  position: fixed;
+  z-index: 10;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  background: transparent;
+  inset: 0;
+}
+
+dialog[open] {
+  display: grid;
+  place-items: center;
+}
+
+dialog:before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  background: hsl(0 0% 10% / 0.5);
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.dialog__content {
+  border: 4px solid currentColor;
+  border-radius: 6px;
+  max-width: 340px;
+  padding: 1rem;
+  background: white;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Pinched from the default input styles */
+textarea {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-image-source: none;
+  border-image-slice: 100%;
+  border-image-width: 1;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-bottom-color: rgb(118, 118, 118);
+  border-bottom-style: inset;
+  border-bottom-width: 2px;
+  border-left-color: rgb(118, 118, 118);
+  border-left-style: inset;
+  border-left-width: 2px;
+  border-right-color: rgb(118, 118, 118);
+  border-right-style: inset;
+  border-right-width: 2px;
+  border-top-color: rgb(118, 118, 118);
+  border-top-style: inset;
+  border-top-width: 2px;
+}
+
+.reactions {
+  max-width: min(40ch, 100% - 2rem);
+  gap: 0.5rem;
+}
+
+dialog button {
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.signature {
+  display: block;
+  margin: 1rem auto;
+  width: 160px;
+}
+
+:where(input, textarea) {
+  padding: 0.5rem 1rem;
+}
+
+.tweet-link {
+  position: fixed;
+  z-index: 2;
+  left: 1rem;
+  bottom: 1rem;
+  display: grid;
+  width: 60px;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+.tweet-link svg {
+  width: 75%;
+  fill: #1da1f2;
+}
+
+[for="show"] {
+  opacity: 0.6;
+}
+
+button {
+  transition: opacity 0.25s;
+}
+
+button[disabled] {
+  opacity: 0.25;
+}
+
+.intro__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choice {
+  display: flex;
+  gap: 0.5rem;
+}
+
+p {
+  margin: 0 auto;
+  max-inline-size: 60ch;
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  border-width: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.watermark-bear {
+  --base-coat: black;
+  position: fixed;
+  z-index: -1;
+  top: 1rem;
+  left: 100%;
+  opacity: 0.45;
+  transform: translateX(-50%);
+  width: 50vmin;
+}
+
+.messaging {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#live {
+  display: grid;
+  border-radius: 6px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  padding: 0;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+#live svg {
+  width: 60%;
+  stroke-width: 2;
+}
+
+.message__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+[type="submit"] {
+  background: hsl(140 80% 35%);
+  color: hsl(0 0% 96%);
+}
+
+.watermark-bear__eyes {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .watermark-bear__eyes {
+    animation: blink 6s -2s infinite;
+  }
+  dialog.intro .dialog__content {
+    animation: drop-in 0.25s;
+  }
+  dialog.message .dialog__content {
+    animation: slide-up 0.25s;
+  }
+  dialog::before {
+    animation: fade-in 0.25s;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes drop-in {
+  0% {
+    translate: 0% -100vh;
+    scale: 0.5;
+  }
+}
+@keyframes slide-up {
+  0% {
+    translate: 0% 100vh;
+    scale: 0.5;
+  }
+}
+
+@keyframes blink {
+  0%,
+  46%,
+  48%,
+  50%,
+  100% {
+    scale: 1 1;
+  }
+  47%,
+  49% {
+    scale: 1 0.01;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .watermark-bear {
+    --base-coat: white;
+  }
+  :root {
+    --color: hsl(0 0% 96%);
+  }
+  body {
+    background: hsl(0 0% 8%);
+  }
+  :is(button, input, textarea) {
+    background: hsl(0 0% 20%);
+  }
+  .dialog__content {
+    background: hsl(0 0% 30%);
+  }
+}

@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { reactionMap } from '../scripts/interactions/interactions-map.js'
+import InteractionBar from '../components/InteractionBar/index.astro'
+
+import './_remote.css'
+---
+<Layout title="Remote">
+  <InteractionBar actionMap={reactionMap} className="reactions" />
+</Layout>
+
+<script>
+  import "./_remote.js";
+</script>
