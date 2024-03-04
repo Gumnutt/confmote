@@ -11,51 +11,51 @@ import {
 } from "../../scripts/interactions/events.js"
 
 const foundationMap = {
-  fire: {
-    emoji: "🔥",
-    label: "React with fire emoji",
-  },
-  laugh: {
-    emoji: "😅",
-    label: "React with laughter",
-  },
+  // fire: {
+  //   emoji: "🔥",
+  //   label: "React with fire emoji",
+  // },
+  // laugh: {
+  //   emoji: "😅",
+  //   label: "React with laughter",
+  // },
   confetti: {
     emoji: "🎉",
     label: "React with confetti",
   },
-  love: {
-    emoji: "❤️",
-    label: "React with love heart",
-  },
-  clap: {
-    emoji: "👏",
-    label: "React with clap",
-  },
-  freeze: {
-    emoji: "🥶",
-    label: "React with freeze",
-  },
-  airhorn: {
-    emoji: "📢",
-    label: "React with airhorn",
-  },
-  mindblown: {
-    emoji: "🤯",
-    label: "React with mindblown emoji",
-  },
-  parachute: {
-    emoji: "🪂",
-    label: "React with parachute bear",
-  },
-  cool: {
-    emoji: "🤙",
-    label: 'React with "cool" shaka hand sign',
-  },
-  hundred: {
-    emoji: "💯",
-    label: 'React with "one hundred"',
-    live: false,
-  },
+  // love: {
+  //   emoji: "❤️",
+  //   label: "React with love heart",
+  // },
+  // clap: {
+  //   emoji: "👏",
+  //   label: "React with clap",
+  // },
+  // freeze: {
+  //   emoji: "🥶",
+  //   label: "React with freeze",
+  // },
+  // airhorn: {
+  //   emoji: "📢",
+  //   label: "React with airhorn",
+  // },
+  // mindblown: {
+  //   emoji: "🤯",
+  //   label: "React with mindblown emoji",
+  // },
+  // parachute: {
+  //   emoji: "🪂",
+  //   label: "React with parachute bear",
+  // },
+  // cool: {
+  //   emoji: "🤙",
+  //   label: 'React with "cool" shaka hand sign',
+  // },
+  // hundred: {
+  //   emoji: "💯",
+  //   label: 'React with "one hundred"',
+  //   live: false,
+  // },
 }
 
 const reactionMapping = (original) => {
