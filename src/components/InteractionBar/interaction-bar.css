@@ -11,9 +11,11 @@
 }
 
 .interaction-bar__interaction {
+  --icon-size: 6rem;
+  --button-width: calc(var(--icon-size) + 1.8rem);
   border-radius: 6px;
-  width: 60px;
-  font-size: 32px;
+  width: var(--button-width);
+  font-size: var(--icon-size);
   aspect-ratio: 1;
 }
 
